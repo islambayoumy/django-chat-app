@@ -18,3 +18,6 @@
     color: gray;
     font-size: 14px;
 }
+h2 label {
+    color: darkslategrey;
+}

@@ -40,14 +40,14 @@
     <div class="collapse navbar-collapse" id="navbar">
       {% if not user.is_authenticated %}
       <ul class="nav navbar-nav navbar-left">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Sign Up</a></li>
+        <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</a></li>
+        <li><a href="{% url 'signup' %}"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Sign Up</a></li>
       </ul>
       {% endif %}
 
       {% if user.is_authenticated %}
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a></li>
+        <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a></li>
       </ul>
       {% endif %}
     </div><!--/.navbar-collapse -->
