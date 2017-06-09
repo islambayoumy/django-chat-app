@@ -1,0 +1,19 @@
+{% extends 'chat_app/base.html' %}
+
+{% block title %}SignUp{% endblock %}
+
+{% block container %}
+
+<h2>SignUp</h2>
+
+<form method="POST">
+{% csrf_token %}
+
+{{ form.as_p }}
+
+<button type="button" class="btn btn-default" id="login">SignUp</button>
+
+</form>
+
+{% endblock %}
+

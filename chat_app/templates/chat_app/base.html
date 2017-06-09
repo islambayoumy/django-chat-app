@@ -38,7 +38,7 @@
     </div><!--/.navbar-header -->
 
     <div class="collapse navbar-collapse" id="navbar">
-      {% if !user.is_authenticated %}
+      {% if not user.is_authenticated %}
       <ul class="nav navbar-nav navbar-left">
         <li><a href="#"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Sign Up</a></li>
@@ -64,6 +64,7 @@
 
 <footer class="footer">    
   <div class="container">
+    <hr>
     <div class="row">
       <div class="col-sm-4 col-sm-offset-4">
         <p class="mute-text text-center">Simple one to one chatting web app</p>

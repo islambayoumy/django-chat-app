@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from chat_app.views import AuthView 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^base/$', AuthView.test)
 ]
