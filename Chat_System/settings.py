@@ -108,4 +108,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL = '/base/'
+LOGIN_REDIRECT_URL = '/messenger/'
+

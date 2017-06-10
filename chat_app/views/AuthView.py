@@ -3,7 +3,10 @@ from chat_app.forms import SignUpForm
 from django.contrib.auth.models import User
 
 def login_redirect(request):
-    return redirect('/login')
+    if request.user.is_authenticated():
+        return redirect('/messenger')
+    else:
+        return redirect('/login')
 
 def signup(request):
     if request.method == 'POST':
