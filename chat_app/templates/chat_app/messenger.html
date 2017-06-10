@@ -6,6 +6,7 @@
 
 {% block includes %}
     <link href="{% static 'css/messenger.css' %}" rel="stylesheet">
+    <script src="{% static 'js/common.js' %}"></script>
 {% endblock  %}
 
 {% block container %}
@@ -25,7 +26,7 @@
         </div>
     </div>
     <div class="col-md-9 chat_box">
-        <div class="messages pre-scrollable">
+        <div class="messages pre-scrollable" id="messages">
             <p>Bootstrap heading <small>2013-10-10 10:49:29.0</small></p>
             <p>Bootstrap heading <small>2013-10-10 10:49:29.0</small></p>
             <p>Bootstrap heading <small>2013-10-10 10:49:29.0</small></p>
@@ -47,9 +48,9 @@
         </div>
         <div class="clearfix"></div>
         <div class="fixed-bottom input-group">
-            <input type="text" class="form-control" placeholder="type a message ...">
+            <input type="text" class="form-control" placeholder="type a message ..." id="msg">
             <span class="input-group-btn">
-                <button class="btn btn-info" type="button">Send</button>
+                <button class="btn btn-info" type="button" id="send">Send</button>
             </span>
         </div><!-- /input-group -->
     </div>
