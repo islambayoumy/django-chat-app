@@ -11,18 +11,20 @@
 
 {% block container %}
 
-<h2>You are logging in as <label>"{{ user.first_name }}"</label></h2>
+<h2>You are logging in as <label class="userId" id="{{ user.id }}">"{{ user.first_name }}"</label></h2>
 
 <div class="clearfix"></div>
 
 <div class="row">
     <div class="col-md-3 users_list pre-scrollable">
         <div class="list-group">
+            <!--
             <a href="#" class="list-group-item"><span class="label label-success">Online</span> User 1</a>
             <a href="#" class="list-group-item"><span class="label label-warning">Offline</span> User 2</a>
             <a href="#" class="list-group-item"><span class="label label-success">Online</span> User 3</a>
             <a href="#" class="list-group-item"><span class="label label-success">Online</span> User 4</a>
             <a href="#" class="list-group-item"><span class="label label-warning">Offline</span> User 5</a>
+            -->
         </div>
     </div>
     <div class="col-md-9 chat_box">
