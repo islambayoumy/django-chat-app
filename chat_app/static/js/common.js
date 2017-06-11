@@ -51,14 +51,16 @@ function msgs_logs(fromId, toId){
             var item = "";
             var d,direction;
             var options = {weekday: 'short', month: 'long', day: 'numeric', minute: 'numeric', hour: 'numeric'};
-
-            $.each(data, function(index, element) {
-                d = new Date(element.timestamp);
-                if(element.sender == fromId){direction="text-danger"}
-                else{direction="text-primary"}
-                item += '<p class="'+ direction +'">' + element.msg + ' <small> ' + d.toLocaleString('en-US', options) + '</small></p><br>'
-            });
-
+            if(data != ""){
+                $.each(data, function(index, element) {
+                    d = new Date(element.timestamp);
+                    if(element.sender == fromId){direction="text-danger"}
+                    else{direction="text-primary"}
+                    item += '<p class="'+ direction +'">' + element.msg + ' <small> ' + d.toLocaleString('en-US', options) + '</small></p><br>';
+                });
+            } else{
+                item = '<p>No messages yet ! send first msg ?</p>';
+            }
             msg_container.html(item);
             msg_container.scrollTop(msg_container.prop("scrollHeight"));
         }
@@ -73,9 +75,8 @@ $(document).on('click', '.list-group-item', function () {
     msgs_logs(userId, gUserId);
 });
 
-
-// click listener for send button
-$('#send').click(function(){
+// handle submitting msgs
+function handle_post_msg(){
     var csrfmiddlewaretoken = getCookie('csrftoken');
     var msg = $("#msg").val();
     var fromId = userId;
@@ -95,7 +96,22 @@ $('#send').click(function(){
     } else{
         alert("please enter a message !")
     }
+}
+
+// click listener for send button
+$('#send').click(function(){
+    handle_post_msg();
 });
+
+
+// key press listener for "Enter"" key
+$('#msg').keypress(function (e) {
+    var key = e.which;
+    if(key == 13){
+        $('#send').click();
+        return false;  
+    }
+});   
 
 
 // get csrf token
