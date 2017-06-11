@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  db:
+    container_name: django_chat_app-db
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootroot
+      - MYSQL_DATABASE=chat_system
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=rootroot
+    ports:
+      - "3306:3306"
+    restart: always
+      
+  web:
+    container_name: django-chat-app-web
+    build: .
+    volumes:
+      - .:/django-chat-app
+    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db      
