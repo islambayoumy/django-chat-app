@@ -34,13 +34,41 @@ function msgs_logs(){
     // get updated msg logs
 }
 
-    $('#send').click(function(){
-        var msg = $("#msg").val();
-        if (msg != ""){
-            ///
-        } else{
-            alert("please enter a message !")
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
         }
-    });
+    }
+    return cookieValue;
+}
+
+
+$('#send').click(function(){
+    var csrfmiddlewaretoken = getCookie('csrftoken');
+    var msg = $("#msg").val();
+    var fromId = 9;
+    var toId = 10;
+    if (msg != ""){
+        $.ajax({
+            type: 'POST',
+            url: 'http://127.0.0.1:8000/api/msgs_logs/',
+            data: {csrfmiddlewaretoken, fromId, toId, msg},
+            datatype: "json",
+            success: function(data){
+                
+            }
+        });
+    } else{
+        alert("please enter a message !")
+    }
+});
 
 });

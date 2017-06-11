@@ -13,7 +13,8 @@ urlpatterns = [
     url(r'^signup/$', AuthView.signup, name='signup'),
 
     url(r'^api/users_list/$', RestAPIView.UsersList.as_view(), name='users_list'),
-    
+    url(r'^api/msgs_logs/$', RestAPIView.MessagesList.as_view(), name='msgs_logs'),
+
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
