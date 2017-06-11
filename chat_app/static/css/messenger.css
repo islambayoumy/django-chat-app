@@ -12,7 +12,6 @@
 }
 .messages p {
     font-size: 19px;
-    color: #111;
 }
 .messages small {
     color: gray;
@@ -20,4 +19,7 @@
 }
 h2 label {
     color: darkslategrey;
+}
+.list-group-item {
+    cursor: pointer;
 }

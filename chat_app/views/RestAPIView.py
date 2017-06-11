@@ -26,7 +26,7 @@ class MessagesList(APIView):
         fromId = request.GET.get('fromId')
         toId = request.GET.get('toId')
         query = Q(Q(sender=fromId)&Q(receiver=toId))|Q(Q(sender=toId)&Q(receiver=fromId))
-        msgs = Messages.objects.filter(query).order_by('-timestamp')
+        msgs = Messages.objects.filter(query).order_by('timestamp')
         serializer = MessagesSerializer(msgs, many=True)
         return Response(serializer.data)
 
