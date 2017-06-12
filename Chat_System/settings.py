@@ -69,7 +69,7 @@ DATABASES = {
         'NAME': 'chat_system',
         'USER': 'postgres',
         'HOST': 'db',
-        'PORT': '5432',
+        'PORT': 5432,
     }
 }
 

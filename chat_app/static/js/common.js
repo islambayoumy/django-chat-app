@@ -82,17 +82,21 @@ function handle_post_msg(){
     var fromId = userId;
     var toId = gUserId;
     if (msg != ""){
-        // ajax post request for posting new msg
-        $.ajax({
-            type: 'POST',
-            url: 'http://127.0.0.1:8000/api/msgs_logs/',
-            data: {csrfmiddlewaretoken, fromId, toId, msg},
-            datatype: "json",
-            success: function(data){
-                $("#msg").val("");
-                msgs_logs(userId, gUserId);
-            }
-        });
+        if(gUserId != 0){
+            // ajax post request for posting new msg
+            $.ajax({
+                type: 'POST',
+                url: 'http://127.0.0.1:8000/api/msgs_logs/',
+                data: {csrfmiddlewaretoken, fromId, toId, msg},
+                datatype: "json",
+                success: function(data){
+                    $("#msg").val("");
+                    msgs_logs(userId, gUserId);
+                }
+            });
+        } else{
+            alert("please choose a user to send ..")
+        }
     } else{
         alert("please enter a message !")
     }
