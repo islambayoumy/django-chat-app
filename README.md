@@ -30,6 +30,17 @@ Following steps assume that you have installed
 `docker-compose up --build`
 - Now you can browse the application through http://127.0.0.1:8000
 
+#### Using the application
+1. Sign Up to create an account
+2. Login with the created account (you are now online)  
+~ for first time you will not see users list as you are the only user in the system
+3. Open another browser (if you are using chrome, just open new incognito tab) and go to http://127.0.0.1:8000
+4. Repeat 1, 2 & 3 as many as you want more accounts to be online
+5. You can send messages to any user in the system either he/she is online or offline
+6. If you have no activity, a refreshing rate = 7sec is done
+7. For two or more users in the system: you can navigate between users, see previous messages and send new ones
+8. Logout to go offline
+
 ## Attachments
 ### Attached with the project an 'Assets' folder containing UML Diagrams :  
 - Class diagram
