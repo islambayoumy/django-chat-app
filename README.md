@@ -25,10 +25,20 @@ Following steps assume that you have installed
 - change directory to project folder  
 `cd django-chat-app`
 - List content of the project (not important!)  
-`dir`
+`dir`  
+-> you should see these output:  
+`Assets`   
+`chat_app`  
+`Chat_System`  
+`docker-compose.yml`  
+`Dockerfile`  
+`manage.py`  
+`requirements.txt`  
 - Run the following command for building and start docker image & containers and run the project  
 `docker-compose up --build`
 - Now you can browse the application through http://127.0.0.1:8000
+
+##### ~ Project isn't ready for production environment yet
 
 #### Using the application
 1. Sign Up to create an account
