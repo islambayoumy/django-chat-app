@@ -82,7 +82,7 @@ function handle_post_msg(){
     var fromId = userId;
     var toId = gUserId;
     if (msg != ""){
-        if(gUserId != 0){
+        if(toId != 0){
             // ajax post request for posting new msg
             $.ajax({
                 type: 'POST',
@@ -95,10 +95,10 @@ function handle_post_msg(){
                 }
             });
         } else{
-            alert("please choose a user to send ..")
+            alert("please choose a user to send ..");
         }
     } else{
-        alert("please enter a message !")
+        alert("please enter a message !");
     }
 }
 
