@@ -13,7 +13,7 @@ SECRET_KEY = 'f=c_ab043&jwl^+n8@_y+r#$8_w4in1uf5#1m+wt3q_$vsmsm5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -65,15 +65,11 @@ WSGI_APPLICATION = 'Chat_System.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', 
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'chat_system',
-        'USER': 'root',
-        'PASSWORD': 'rootroot',
-        'HOST': 'localhost',
-        'PORT': '3306',
-        'OPTIONS': {
-            'sql_mode': 'traditional',
-        }
+        'USER': 'postgres',
+        'HOST': 'db',
+        'PORT': '5432',
     }
 }
 

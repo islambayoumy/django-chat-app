@@ -3,16 +3,10 @@ version: '3'
 services:
   db:
     container_name: django_chat_app-db
-    image: mysql
+    image: postgres
     environment:
-      - MYSQL_ROOT_PASSWORD=rootroot
-      - MYSQL_DATABASE=chat_system
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=rootroot
-    ports:
-      - "3306:3306"
-    restart: always
-      
+      - POSTGRES_DB=chat_system
+
   web:
     container_name: django-chat-app-web
     build: .
