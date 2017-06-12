@@ -24,16 +24,6 @@ Following steps assume that you have installed
 `git clone https://github.com/islambayoumy/django-chat-app`
 - change directory to project folder  
 `cd django-chat-app`
-- List content of the project (not important!)  
-`dir`  
--> you should see these output:  
-`Assets`   
-`chat_app`  
-`Chat_System`  
-`docker-compose.yml`  
-`Dockerfile`  
-`manage.py`  
-`requirements.txt`  
 - Run the following command for building and start docker image & containers and run the project  
 `docker-compose up --build`
 - Now you can browse the application through http://127.0.0.1:8000
@@ -65,6 +55,6 @@ Following steps assume that you have installed
  
  ## Further improvements
  - Using a front-end framework to call back-end api (e.g Angular2 or React.js)
- - For project expantion, using nosql database (e.g Mongodb)
+ - For project expansion, using nosql database (e.g Mongodb)
  - Trying to use django 'Sockets' and 'Channels' for a real-time massenger
  - Handle some ux/ui enhancements
